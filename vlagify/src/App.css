@@ -5,38 +5,48 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.maintenance-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tool-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 2.5rem;
+  color: #646cff;
+}
+
+.description {
+  color: #888;
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: 1rem auto;
 }
 
 .card {
-  padding: 2em;
+  padding: 1.5em;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-top: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.contact-info {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
