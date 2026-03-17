@@ -15,7 +15,7 @@ function App() {
         </p>
 
         <div className="card">
-          <p>Verwachte terugkomst: <strong>Binnen paar weken</strong></p>
+          <p>Verwachte terugkomst: <strong>Binnen enkele weken</strong></p>
         </div>
 
         <div className="contact-info">
