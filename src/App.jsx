@@ -1,6 +1,8 @@
 import './App.css'
+import { useTranslation, Trans } from 'react-i18next';
 
 function App() {
+  const { t } = useTranslation();
   return (
     <div className="maintenance-container">
       <div className="content">
@@ -8,18 +10,20 @@ function App() {
           <span className="tool-icon">🛠️</span>
         </div>
         
-        <h1>We zijn even bezig...</h1>
+        <h1>{t('maintenance.title')}</h1>
         <p className="description">
-          Onze website ondergaat momenteel gepland onderhoud om de ervaring te verbeteren. 
-          We zijn snel weer online!
+          {t('maintenance.description')}
         </p>
 
         <div className="card">
-          <p>Verwachte terugkomst: <strong>Binnen enkele weken</strong></p>
+          <p>{t('maintenance.expectedReturn')}</p>
         </div>
 
         <div className="contact-info">
-          <p>Vragen? Stuur ons een mailtje op <a href="mailto:info@example.com">info@example.com</a></p>
+          <p>
+            {t('maintenance.contact')}
+            <a href="mailto:info@example.com">info@example.com</a>
+          </p>
         </div>
       </div>
     </div>
