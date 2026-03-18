@@ -10,6 +10,18 @@ export const fr = {
         metric: "Métrique",
         imperial: "Impérial"
     },
+    footer: {
+        home: "Accueil",
+        allProducts: "Tous les Produits",
+        faq: "FAQ",
+        contact: "Contact",
+        myAccount: "Mon Compte",
+        flagInstructions: "Instructions & Entretien des Drapeaux",
+        description: "Votre spécialiste des drapeaux, fanions et mâts de drapeau. Qualité supérieure au meilleur prix.",
+        copyright: "Tous droits réservés",
+        quickLinks: "Liens Rapides",
+        categories: "Catégories"
+    },
     maintenance: {
         title: "Nous y travaillons...",
         description: "Notre site web est actuellement en maintenance programmée pour améliorer l'expérience. Nous serons de retour en ligne bientôt !",

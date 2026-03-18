@@ -10,6 +10,18 @@ export const de = {
         metric: "Metrisch",
         imperial: "Imperial"
     },
+    footer: {
+        home: "Startseite",
+        allProducts: "Alle Produkte",
+        faq: "FAQ",
+        contact: "Kontakt",
+        myAccount: "Mein Konto",
+        flagInstructions: "Flaggenanleitung & Pflege",
+        description: "Ihr Spezialist für hochwertige Flaggen, Wimpel und Flaggenmasten. Top Qualität zum besten Preis.",
+        copyright: "Alle Rechte vorbehalten",
+        quickLinks: "Schnelllinks",
+        categories: "Kategorien"
+    },
     maintenance: {
         title: "Wir arbeiten daran...",
         description: "Unsere Website wird derzeit planmäßig gewartet, um die Erfahrung zu verbessern. Wir sind bald wieder online!",

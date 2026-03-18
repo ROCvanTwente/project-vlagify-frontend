@@ -10,6 +10,18 @@ export const en = {
         metric: "Metric",
         imperial: "Imperial"
     },
+    footer: {
+        home: "Home",
+        allProducts: "All Products",
+        faq: "FAQ",
+        contact: "Contact",
+        myAccount: "My Account",
+        flagInstructions: "Flag Instructions & Care",
+        description: "Your specialist in flags, pennants and flagpoles. Top quality at the best price.",
+        copyright: "All rights reserved",
+        quickLinks: "Quick Links",
+        categories: "Categories"
+    },
     maintenance: {
         title: "We're working on it...",
         description: "Our website is currently undergoing scheduled maintenance to improve the experience. We'll be back online soon!",
