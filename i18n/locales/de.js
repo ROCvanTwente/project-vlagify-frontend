@@ -1,4 +1,15 @@
 export const de = {
+    navbar: {
+        home: "Startseite",
+        products: "Produkte",
+        flagGuide: "Flaggenanleitung",
+        contact: "Kontakt",
+        language: "Sprache",
+        currency: "Währung",
+        measurementSystem: "Maßesystem",
+        metric: "Metrisch",
+        imperial: "Imperial"
+    },
     maintenance: {
         title: "Wir arbeiten daran...",
         description: "Unsere Website wird derzeit planmäßig gewartet, um die Erfahrung zu verbessern. Wir sind bald wieder online!",

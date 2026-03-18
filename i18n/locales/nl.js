@@ -1,4 +1,15 @@
 export const nl = {
+    navbar: {
+        home: "Home",
+        products: "Producten",
+        flagGuide: "Vlaginstructies",
+        contact: "Contact",
+        language: "Taal",
+        currency: "Valuta",
+        measurementSystem: "Meetstelsel",
+        metric: "Metrisch",
+        imperial: "Imperiaal"
+    },
     maintenance: {
         title: "We zijn even bezig...",
         description: "Onze website ondergaat momenteel gepland onderhoud om de ervaring te verbeteren. We zijn snel weer online!",

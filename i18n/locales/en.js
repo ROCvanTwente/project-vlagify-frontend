@@ -1,4 +1,15 @@
 export const en = {
+    navbar: {
+        home: "Home",
+        products: "Products",
+        flagGuide: "Flag Guide",
+        contact: "Contact",
+        language: "Language",
+        currency: "Currency",
+        measurementSystem: "Measurement System",
+        metric: "Metric",
+        imperial: "Imperial"
+    },
     maintenance: {
         title: "We're working on it...",
         description: "Our website is currently undergoing scheduled maintenance to improve the experience. We'll be back online soon!",

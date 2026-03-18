@@ -1,4 +1,15 @@
 export const fr = {
+    navbar: {
+        home: "Accueil",
+        products: "Produits",
+        flagGuide: "Guide des Drapeaux",
+        contact: "Contact",
+        language: "Langue",
+        currency: "Devise",
+        measurementSystem: "Système de Mesure",
+        metric: "Métrique",
+        imperial: "Impérial"
+    },
     maintenance: {
         title: "Nous y travaillons...",
         description: "Notre site web est actuellement en maintenance programmée pour améliorer l'expérience. Nous serons de retour en ligne bientôt !",
