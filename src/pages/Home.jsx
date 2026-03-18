@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowRight, Star, Truck, Shield, Clock, Palette } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { products } from '../temp-data/products';
@@ -83,7 +83,7 @@ export const Home = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-64 md:h-auto">
+                <div className="relative h-[50vh]">
                   <ImageWithFallback
                     src={customFlagProduct.image}
                     alt={customFlagProduct.name}
