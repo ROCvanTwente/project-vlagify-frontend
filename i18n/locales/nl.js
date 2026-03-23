@@ -57,5 +57,33 @@ export const nl = {
         specialRequest: "Heeft u een speciale wens?",
         specialRequestDesc: "Neem contact met ons op voor maatwerk vlaggen en groothandel prijzen",
         contact: "Neem Contact Op"
+    },
+    login: {
+        login: "Inloggen",
+        register: "Registreren",
+        emailAddress: "E-mailadres",
+        password: "Wachtwoord",
+        confirmPassword: "Bevestig Wachtwoord",
+        firstName: "Voornaam",
+        middleName: "Tussenvoegsel",
+        lastName: "Achternaam",
+        phoneNumber: "Telefoonnummer",
+        address: "Adres",
+        postalCode: "Postcode",
+        city: "Stad",
+        country: "Land",
+        selectCountry: "Selecteer een land",
+        optional: "(optioneel)",
+        loginButton: "Inloggen",
+        loggingIn: "Bezig met inloggen...",
+        registerButton: "Registreren",
+        creatingAccount: "Account aanmaken...",
+        forgotPassword: "Wachtwoord vergeten?",
+        loginSuccess: "Succesvol ingelogd!",
+        loginError: "Ongeldige inloggegevens.",
+        passwordMismatch: "Wachtwoorden komen niet overeen",
+        passwordTooShort: "Wachtwoord moet minimaal 6 tekens bevatten",
+        registerSuccess: "Account succesvol aangemaakt!",
+        registerError: "Er is iets misgegaan. Probeer het opnieuw."
     }
 }

@@ -57,5 +57,33 @@ export const en = {
         specialRequest: "Do you have a special request?",
         specialRequestDesc: "Contact us for custom flags and wholesale prices",
         contact: "Contact Us"
+    },
+    login: {
+        login: "Login",
+        register: "Register",
+        emailAddress: "Email Address",
+        password: "Password",
+        confirmPassword: "Confirm Password",
+        firstName: "First Name",
+        middleName: "Middle Name",
+        lastName: "Last Name",
+        phoneNumber: "Phone Number",
+        address: "Address",
+        postalCode: "Postal Code",
+        city: "City",
+        country: "Country",
+        selectCountry: "Select a country",
+        optional: "(optional)",
+        loginButton: "Login",
+        loggingIn: "Logging in...",
+        registerButton: "Register",
+        creatingAccount: "Creating account...",
+        forgotPassword: "Forgot password?",
+        loginSuccess: "Successfully logged in!",
+        loginError: "Invalid credentials.",
+        passwordMismatch: "Passwords do not match",
+        passwordTooShort: "Password must be at least 6 characters",
+        registerSuccess: "Account created successfully!",
+        registerError: "Something went wrong. Please try again."
     }
 }
