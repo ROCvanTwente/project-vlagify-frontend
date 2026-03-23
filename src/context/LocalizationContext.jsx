@@ -1,9 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { en } from '../../i18n/locales/en';
 import { nl } from '../../i18n/locales/nl';
 import { de } from '../../i18n/locales/de';
 import { fr } from '../../i18n/locales/fr';
+import i18n from '../../i18n/i18n';
 
 const translations = {
   en,
@@ -27,9 +28,35 @@ const currencySymbols = {
 };
 
 export const LocalizationProvider = ({ children }) => {
-  const [language, setLanguage] = useState('nl');
+  const getInitialLanguage = () => {
+    const activeLanguage = i18n.resolvedLanguage || i18n.language || 'nl';
+    return translations[activeLanguage] ? activeLanguage : 'nl';
+  };
+
+  const [language, setLanguageState] = useState(getInitialLanguage);
   const [currency, setCurrency] = useState('EUR');
   const [measurementSystem, setMeasurementSystem] = useState('metric');
+
+  useEffect(() => {
+    const handleLanguageChanged = (newLanguage) => {
+      if (translations[newLanguage]) {
+        setLanguageState(newLanguage);
+      }
+    };
+
+    i18n.on('languageChanged', handleLanguageChanged);
+
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, []);
+
+  const setLanguage = (newLanguage) => {
+    if (!translations[newLanguage]) return;
+
+    setLanguageState(newLanguage);
+    void i18n.changeLanguage(newLanguage);
+  };
 
   const t = (key) => {
     const keys = key.split('.');
