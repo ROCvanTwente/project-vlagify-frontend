@@ -27,7 +27,7 @@ export const LoginPage = () => {
     address: '',
     postalCode: '',
     city: '',
-    country: '',
+    country: 'NLD',
     password: '',
     confirmPassword: ''
   });
