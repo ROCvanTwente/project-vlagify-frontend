@@ -328,7 +328,11 @@ export const LoginPage = () => {
                 <label htmlFor="country" className="block font-semibold mb-2">
                   {t('login.country')}
                 </label>
-                <CountryDropdown />
+                <CountryDropdown 
+                    placeholder={t('login.selectCountry')}
+                    defaultValue={registerData.country || "NLD"}
+                    onChange={(country) => setRegisterData({ ...registerData, country: country.alpha3 })}
+                />
               </div>
 
               <button
