@@ -57,5 +57,33 @@ export const de = {
         specialRequest: "Haben Sie einen besonderen Wunsch?",
         specialRequestDesc: "Kontaktieren Sie uns für maßgefertigte Flaggen und Großhandelspreise",
         contact: "Kontaktieren Sie Uns"
+    },
+    login: {
+        login: "Anmelden",
+        register: "Registrieren",
+        emailAddress: "E-Mail-Adresse",
+        password: "Passwort",
+        confirmPassword: "Passwort Bestätigen",
+        firstName: "Vorname",
+        middleName: "Zwischenname",
+        lastName: "Nachname",
+        phoneNumber: "Telefonnummer",
+        address: "Adresse",
+        postalCode: "Postleitzahl",
+        city: "Stadt",
+        country: "Land",
+        selectCountry: "Land auswählen",
+        optional: "(optional)",
+        loginButton: "Anmelden",
+        loggingIn: "Anmeldung...",
+        registerButton: "Registrieren",
+        creatingAccount: "Konto erstellen...",
+        forgotPassword: "Passwort vergessen?",
+        loginSuccess: "Erfolgreich angemeldet!",
+        loginError: "Ungültige Anmeldedaten.",
+        passwordMismatch: "Passwörter stimmen nicht überein",
+        passwordTooShort: "Passwort muss mindestens 6 Zeichen enthalten",
+        registerSuccess: "Konto erfolgreich erstellt!",
+        registerError: "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
     }
 }

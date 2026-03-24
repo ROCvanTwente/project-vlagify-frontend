@@ -57,5 +57,33 @@ export const fr = {
         specialRequest: "Avez-vous une demande spéciale?",
         specialRequestDesc: "Contactez-nous pour des drapeaux personnalisés et des prix de gros",
         contact: "Contactez-Nous"
+    },
+    login: {
+        login: "Connexion",
+        register: "S'inscrire",
+        emailAddress: "Adresse E-mail",
+        password: "Mot de Passe",
+        confirmPassword: "Confirmer le Mot de Passe",
+        firstName: "Prénom",
+        middleName: "Deuxième Prénom",
+        lastName: "Nom de Famille",
+        phoneNumber: "Numéro de Téléphone",
+        address: "Adresse",
+        postalCode: "Code Postal",
+        city: "Ville",
+        country: "Pays",
+        selectCountry: "Sélectionnez un pays",
+        optional: "(optionnel)",
+        loginButton: "Se Connecter",
+        loggingIn: "Connexion en cours...",
+        registerButton: "S'inscrire",
+        creatingAccount: "Création du compte...",
+        forgotPassword: "Mot de passe oublié?",
+        loginSuccess: "Connexion réussie!",
+        loginError: "Identifiants invalides.",
+        passwordMismatch: "Les mots de passe ne correspondent pas",
+        passwordTooShort: "Le mot de passe doit contenir au moins 6 caractères",
+        registerSuccess: "Compte créé avec succès!",
+        registerError: "Quelque chose s'est mal passé. Veuillez réessayer."
     }
 }
