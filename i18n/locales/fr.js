@@ -94,5 +94,21 @@ export const fr = {
         customerServiceTitle: 'Service Client',
         customerServiceDescription: 'Notre équipe de service client est prête à vous aider. Appelez-nous ou envoyez-nous un e-mail pour une aide immédiate avec vos questions.',
         successMessage: 'Merci pour votre message ! Nous vous contacterons dès que possible.'
-  }
+    },
+    faq: {
+        title: 'Questions Fréquemment Posées',
+        subtitle: 'Trouvez rapidement des réponses à vos questions',
+        search: 'Rechercher dans la FAQ...',
+        all: 'Tous',
+        ordering: 'Commande',
+        shipping: 'Livraison',
+        returns: 'Retours',
+        payment: 'Paiement',
+        products: 'Produits',
+        noResults: 'Aucun résultat trouvé',
+        contact: 'Contactez-nous',
+        contactText: 'Vous n\'avez pas trouvé votre question?',
+        contactDescription: 'Notre équipe de service client est là pour vous aider !',
+        viewContact: 'Nous contacter'
+    },
 }

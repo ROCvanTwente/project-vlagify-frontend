@@ -94,5 +94,21 @@ export const nl = {
         customerServiceTitle: 'Klantenservice',
         customerServiceDescription: 'Ons klantenservice team staat voor u klaar. Bel of mail ons voor directe hulp bij uw vragen.',
         successMessage: 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.'
-  }
+  },
+  faq: {
+        title: 'Veelgestelde Vragen',
+        subtitle: 'Vind snel antwoorden op uw vragen',
+        search: 'Zoek in FAQ...',
+        all: 'Alle',
+        ordering: 'Bestellen',
+        shipping: 'Verzending',
+        returns: 'Retourneren',
+        payment: 'Betaling',
+        products: 'Producten',
+        noResults: 'Geen resultaten gevonden',
+        contact: 'Neem contact op',
+        contactText: 'Heeft u uw vraag niet gevonden?',
+        contactDescription: 'Ons klantenservice team helpt u graag verder!',
+        viewContact: 'Contact opnemen'
+}
 }
