@@ -99,7 +99,7 @@ export const LoginPage = () => {
           <div className="flex mb-8 border-b">
             <button
               onClick={() => setIsLogin(true)}
-              className={`flex-1 py-3 font-semibold transition ${
+              className={`flex-1 py-3 font-semibold transition cursor-pointer ${
                 isLogin
                   ? 'border-b-2 border-blue-600 text-blue-600'
                   : 'text-gray-600 hover:text-gray-900'
@@ -110,7 +110,7 @@ export const LoginPage = () => {
             </button>
             <button
               onClick={() => setIsLogin(false)}
-              className={`flex-1 py-3 font-semibold transition ${
+              className={`flex-1 py-3 font-semibold transition cursor-pointer ${
                 !isLogin
                   ? 'border-b-2 border-blue-600 text-blue-600'
                   : 'text-gray-600 hover:text-gray-900'
