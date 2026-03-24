@@ -1,4 +1,27 @@
 export const nl = {
+    navbar: {
+        home: "Home",
+        products: "Producten",
+        flagGuide: "Vlaginstructies",
+        contact: "Contact",
+        language: "Taal",
+        currency: "Valuta",
+        measurementSystem: "Meetstelsel",
+        metric: "Metrisch",
+        imperial: "Imperiaal"
+    },
+    footer: {
+        home: "Home",
+        allProducts: "Alle Producten",
+        faq: "Veelgestelde Vragen",
+        contact: "Contact",
+        myAccount: "Mijn Account",
+        flagInstructions: "Vlaginstructies & Onderhoud",
+        description: "Uw specialist in vlaggen, wimpels en vlaggenmasten. Topkwaliteit tegen de beste prijs.",
+        copyright: "Alle rechten voorbehouden",
+        quickLinks: "Snelle Links",
+        categories: "Categorieën"
+    },
     maintenance: {
         title: "We zijn even bezig...",
         description: "Onze website ondergaat momenteel gepland onderhoud om de ervaring te verbeteren. We zijn snel weer online!",
