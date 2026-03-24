@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router';
+import { useNavigate, useLocation, Link } from 'react-router';
 import { useApp } from '../context/AppContext';
 import { LogIn, UserPlus } from 'lucide-react';
 import { toast } from 'sonner';
@@ -9,9 +9,12 @@ import { CountryDropdown } from '../components/ui/country-dropdown';
 export const LoginPage = () => {
   const { login, register, user } = useApp();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
+  const [registerError, setRegisterError] = useState('');
 
   const [loginData, setLoginData] = useState({
     email: '',
@@ -40,15 +43,46 @@ export const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoginError('');
     setIsLoading(true);
 
-    const success = await login(loginData.email, loginData.password);
-    
-    if (success) {
-      toast.success(t('login.loginSuccess'));
-      navigate('/profiel');
-    } else {
-      toast.error(t('login.loginError'));
+    try {
+      if (loginData.email.trim() === '' || loginData.password.trim() === '') {
+        setLoginError(t('login.fillAllFields') || 'Vul alle vereiste velden in');
+        setIsLoading(false);
+        return;
+      }
+
+      const result = await login(loginData.email, loginData.password);
+      
+      if (result.success) {
+        // Redirect to previous page or profiel
+        const previousPath = location.state?.from?.pathname || '/profiel';
+        navigate(previousPath);
+      } else {
+        // Display specific error message from API or fallback to generic error
+        const errorMessage = result.error || t('login.loginError');
+        setLoginError(errorMessage);
+        toast.error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      
+      let errorMessage = t('login.loginError') || 'Login failed';
+      
+      // Handle .NET Identity errors
+      if (error.response?.data) {
+        const serverErrors = error.response.data;
+        if (typeof serverErrors === 'object') {
+          const errorMessages = Object.values(serverErrors).flat().join(", ");
+          errorMessage = errorMessages || errorMessage;
+        } else if (typeof serverErrors === 'string') {
+          errorMessage = serverErrors;
+        }
+      }
+      
+      setLoginError(errorMessage);
+      toast.error(errorMessage);
     }
     
     setIsLoading(false);
@@ -56,36 +90,80 @@ export const LoginPage = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    if (registerData.password !== registerData.confirmPassword) {
-      toast.error(t('login.passwordMismatch'));
-      return;
-    }
-
-    if (registerData.password.length < 6) {
-      toast.error(t('login.passwordTooShort'));
-      return;
-    }
-
+    setRegisterError('');
     setIsLoading(true);
-    const success = await register({
-      email: registerData.email,
-      password: registerData.password,
-      firstName: registerData.firstName,
-      middleName: registerData.middleName,
-      lastName: registerData.lastName,
-      phone: registerData.phone,
-      address: registerData.address,
-      postalCode: registerData.postalCode,
-      city: registerData.city,
-      country: registerData.country
-    });
-    
-    if (success) {
-      toast.success(t('login.registerSuccess'));
-      navigate('/profiel');
-    } else {
-      toast.error(t('login.registerError'));
+
+    try {
+      if (
+        registerData.firstName.trim() === '' ||
+        registerData.lastName.trim() === '' ||
+        registerData.email.trim() === '' ||
+        registerData.phone.trim() === '' ||
+        registerData.address.trim() === '' ||
+        registerData.postalCode.trim() === '' ||
+        registerData.city.trim() === '' ||
+        registerData.password.trim() === '' ||
+        registerData.confirmPassword.trim() === ''
+      ) {
+        setRegisterError(t('login.fillAllFields') || 'Vul alle vereiste velden in');
+        setIsLoading(false);
+        return;
+      }
+
+      if (registerData.password !== registerData.confirmPassword) {
+        setRegisterError(t('login.passwordMismatch'));
+        setIsLoading(false);
+        return;
+      }
+
+      if (registerData.password.length < 6) {
+        setRegisterError(t('login.passwordTooShort'));
+        setIsLoading(false);
+        return;
+      }
+
+      const result = await register({
+        email: registerData.email,
+        password: registerData.password,
+        confirmPassword: registerData.confirmPassword,
+        firstName: registerData.firstName,
+        middleName: registerData.middleName,
+        lastName: registerData.lastName,
+        phone: registerData.phone,
+        address: registerData.address,
+        postalCode: registerData.postalCode,
+        city: registerData.city,
+        country: registerData.country
+      });
+      
+      if (result.success) {
+        // Redirect to previous page or profiel after successful registration and login
+        const previousPath = location.state?.from?.pathname || '/profiel';
+        navigate(previousPath);
+      } else {
+        // Display specific error message from API or fallback to generic error
+        const errorMessage = result.error || t('login.registerError');
+        setRegisterError(errorMessage);
+        toast.error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      
+      let errorMessage = t('login.registerError') || 'Registration failed';
+      
+      // Handle .NET Identity errors
+      if (error.response?.data) {
+        const serverErrors = error.response.data;
+        if (typeof serverErrors === 'object') {
+          const errorMessages = Object.values(serverErrors).flat().join(", ");
+          errorMessage = errorMessages || errorMessage;
+        } else if (typeof serverErrors === 'string') {
+          errorMessage = serverErrors;
+        }
+      }
+      
+      setRegisterError(errorMessage);
+      toast.error(errorMessage);
     }
     
     setIsLoading(false);
@@ -124,6 +202,11 @@ export const LoginPage = () => {
           {isLogin ? (
             /* Login Form */
             <form onSubmit={handleLogin} className="space-y-6">
+              {loginError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="text-red-800 text-sm">{loginError}</p>
+                </div>
+              )}
               <div>
                 <label htmlFor="login-email" className="block font-semibold mb-2">
                   {t('login.emailAddress')}
@@ -171,6 +254,11 @@ export const LoginPage = () => {
           ) : (
             /* Register Form */
             <form onSubmit={handleRegister} className="space-y-4">
+              {registerError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="text-red-800 text-sm">{registerError}</p>
+                </div>
+              )}
               {/* Name Fields */}
               <div>
                 <label htmlFor="firstName" className="block font-semibold mb-2">
@@ -258,9 +346,16 @@ export const LoginPage = () => {
                   onChange={(e) => setRegisterData({ ...registerData, confirmPassword: e.target.value })}
                   required
                   minLength={6}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 ${
+                    registerData.password && registerData.confirmPassword && registerData.password !== registerData.confirmPassword
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-gray-300 focus:ring-blue-500'
+                  }`}
                   placeholder="••••••••"
                 />
+                {registerData.password && registerData.confirmPassword && registerData.password !== registerData.confirmPassword && (
+                  <p className="text-red-500 text-sm mt-1">{t('login.passwordMismatch')}</p>
+                )}
               </div>
 
               <div>
@@ -337,7 +432,7 @@ export const LoginPage = () => {
 
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || registerData.password.length < 6 || registerData.password !== registerData.confirmPassword}
                 className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:bg-gray-400"
               >
                 {isLoading ? t('login.creatingAccount') : t('login.registerButton')}
