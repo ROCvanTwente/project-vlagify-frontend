@@ -56,6 +56,8 @@ export const nl = {
         viewAll: "Bekijk Alles →",
         specialRequest: "Heeft u een speciale wens?",
         specialRequestDesc: "Neem contact met ons op voor maatwerk vlaggen en groothandel prijzen",
-        contact: "Neem Contact Op"
+        contact: "Neem Contact Op",
+        flagCreatorTitle: "Maak je eigen vlag",
+        flagCreatorSubtitle: "Ontwerp je eigen unieke vlag met onze configurator. Upload je ontwerp en kies uit verschillende formaten en materialen."
     }
 }

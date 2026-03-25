@@ -99,11 +99,11 @@ export const Home = () => {
                   <div className="flex items-center mb-3">
                     <Palette className="h-6 w-6 text-blue-600 mr-2" />
                     <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      {customFlagProduct.name}
+                      {t('home.flagCreatorTitle')}
                     </h2>
                   </div>
                   <p className="text-base text-gray-600 mb-4">
-                    {customFlagProduct.description}
+                    {t('home.flagCreatorSubtitle')}
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center text-sm text-gray-700">

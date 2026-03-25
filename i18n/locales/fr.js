@@ -56,6 +56,8 @@ export const fr = {
         viewAll: "Voir Tout →",
         specialRequest: "Avez-vous une demande spéciale?",
         specialRequestDesc: "Contactez-nous pour des drapeaux personnalisés et des prix de gros",
-        contact: "Contactez-Nous"
+        contact: "Contactez-Nous",
+        flagCreatorTitle: "Créez votre propre drapeau",
+        flagCreatorSubtitle: "Concevez votre propre drapeau unique avec notre configurateur. Téléchargez votre design et choisissez parmi différentes tailles et matériaux."
     }
 }
