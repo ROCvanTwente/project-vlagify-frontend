@@ -23,7 +23,6 @@ export const AppProvider = ({ children }) => {
     if (savedUser && token) {
       try {
         const parsedUser = JSON.parse(savedUser);
-        console.log('User restored from localStorage:', parsedUser);
         return parsedUser;
       } catch (error) {
         console.error('Failed to parse saved user:', error);
