@@ -7,7 +7,8 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { LoginPage } from "./pages/LoginPage";
 import { useApp } from "./context/AppContext";
-import { authService } from "./services/authService";
+//import { authService } from "./services/authService";
+import { ProfilePage } from "./pages/ProfilePage";
 
 function App() {
   const { user } = useApp();
@@ -22,13 +23,13 @@ function App() {
     userPreviousRef.current = user;
   }, [user, t]);
 
-  useEffect(() => {
-    // Debug: Log JWT token and user info
-    const token = authService.getToken();
-    console.log('JWT Token:', token);
-    console.log('User:', user);
-    console.log('User logged in:', !!token && !!user);
-  }, [user]);
+  // useEffect(() => {
+  //   // Debug: Log JWT token and user info
+  //   const token = authService.getToken();
+  //   console.log('JWT Token:', token);
+  //   console.log('User:', user);
+  //   console.log('User logged in:', !!token && !!user);
+  // }, [user]);
 
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inloggen" element={<LoginPage />} />
+        <Route path="/profiel" element={<ProfilePage />} />
 
       </Routes>
     </main>

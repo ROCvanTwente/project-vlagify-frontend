@@ -55,7 +55,8 @@ export const authService = {
       user: {
         email: response.data.email,
         firstName: response.data.firstName,
-        token: response.data.token
+        token: response.data.token,
+        roles: response.data.roles
       },
       token: response.data.token
     };
