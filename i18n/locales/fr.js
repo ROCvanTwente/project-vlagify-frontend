@@ -129,8 +129,13 @@ export const fr = {
         newPassword: "Nouveau Mot de Passe",
         confirmNewPassword: "Confirmer le Nouveau Mot de Passe",
         changePassword: "Changer le Mot de Passe",
+        changePasswordSubtitle: "Changez votre mot de passe pour sécuriser votre compte",
         passwordUpdated: "Mot de passe mis à jour avec succès!",
         passwordMismatch: "Les mots de passe ne correspondent pas",
-        passwordTooShort: "Le mot de passe doit contenir au moins 6 caractères"
+        passwordTooShort: "Le mot de passe doit contenir au moins 6 caractères",
+        passwordRequirements: "Le mot de passe doit contenir au moins 6 caractères",
+        backToProfile: "Retour au profil",
+        savePassword: "Enregistrer le Mot de Passe",
+        fillAllFields: "Veuillez remplir tous les champs"
     }
 }

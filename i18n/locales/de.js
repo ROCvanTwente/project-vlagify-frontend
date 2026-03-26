@@ -129,8 +129,13 @@ export const de = {
         newPassword: "Neues Passwort",
         confirmNewPassword: "Neues Passwort Bestätigen",
         changePassword: "Passwort Ändern",
+        changePasswordSubtitle: "Ändern Sie Ihr Passwort, um Ihr Konto sicher zu halten",
         passwordUpdated: "Passwort erfolgreich aktualisiert!",
         passwordMismatch: "Passwörter stimmen nicht überein",
-        passwordTooShort: "Passwort muss mindestens 6 Zeichen enthalten"
+        passwordTooShort: "Passwort muss mindestens 6 Zeichen enthalten",
+        passwordRequirements: "Passwort muss mindestens 6 Zeichen enthalten",
+        backToProfile: "Zurück zum Profil",
+        savePassword: "Passwort Speichern",
+        fillAllFields: "Bitte füllen Sie alle Felder aus"
     }
 }

@@ -10,7 +10,7 @@ import { CountryDropdown } from '@/components/ui/country-dropdown';
 import { countries } from 'country-data-list';
 
 export const ProfilePage = () => {
-  const { user, logout, updateProfile } = useApp();
+  const { user, logout } = useApp();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { formatPrice } = useCurrency();

@@ -9,6 +9,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { useApp } from "./context/AppContext";
 //import { authService } from "./services/authService";
 import { ProfilePage } from "./pages/ProfilePage";
+import { ChangePasswordPage } from "./pages/ChangePasswordPage";
 
 function App() {
   const { user } = useApp();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/inloggen" element={<LoginPage />} />
         <Route path="/profiel" element={<ProfilePage />} />
+        <Route path="/wachtwoord-wijzigen" element={<ChangePasswordPage />} />
 
       </Routes>
     </main>

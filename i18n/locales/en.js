@@ -129,8 +129,13 @@ export const en = {
         newPassword: "New Password",
         confirmNewPassword: "Confirm New Password",
         changePassword: "Change Password",
+        changePasswordSubtitle: "Change your password to keep your account secure",
         passwordUpdated: "Password updated successfully!",
         passwordMismatch: "Passwords do not match",
-        passwordTooShort: "Password must be at least 6 characters"
+        passwordTooShort: "Password must be at least 6 characters",
+        passwordRequirements: "Password must be at least 6 characters",
+        backToProfile: "Back to profile",
+        savePassword: "Save Password",
+        fillAllFields: "Please fill in all fields"
     }
 }

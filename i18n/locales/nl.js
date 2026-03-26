@@ -129,8 +129,13 @@ export const nl = {
         newPassword: "Nieuw Wachtwoord",
         confirmNewPassword: "Bevestig Nieuw Wachtwoord",
         changePassword: "Wachtwoord Wijzigen",
+        changePasswordSubtitle: "Wijzig uw wachtwoord om uw account veilig te houden",
         passwordUpdated: "Wachtwoord succesvol bijgewerkt!",
         passwordMismatch: "Wachtwoorden komen niet overeen",
-        passwordTooShort: "Wachtwoord moet minimaal 6 tekens bevatten"
+        passwordTooShort: "Wachtwoord moet minimaal 6 tekens bevatten",
+        passwordRequirements: "Wachtwoord moet minimaal 6 tekens bevatten",
+        backToProfile: "Terug naar profiel",
+        savePassword: "Wachtwoord Opslaan",
+        fillAllFields: "Vul alle velden in"
     }
 }

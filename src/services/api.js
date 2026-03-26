@@ -35,3 +35,11 @@ export async function updateProfile(profileData) {
         throw new Error(`Profile update failed: ${error.response?.statusText || error.message}`);
     }
 }
+
+export async function changePassword(passwordData) {
+    try {
+        await apiClient.post('/api/auth/change-password', passwordData);
+    } catch (error) {
+        throw new Error(`Password change failed: ${error.response?.statusText || error.message}`);
+    }
+}
