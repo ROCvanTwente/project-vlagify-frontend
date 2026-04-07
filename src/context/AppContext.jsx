@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState } from 'react';
+import { authService } from '../services/authService';
 
 const AppContext = createContext(undefined);
 
@@ -13,7 +14,23 @@ export const useApp = () => {
 
 export const AppProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [user, setUser] = useState(null);
+  
+  // Initialize user from localStorage using lazy initialization
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    const token = authService.getToken();
+    
+    if (savedUser && token) {
+      try {
+        const parsedUser = JSON.parse(savedUser);
+        return parsedUser;
+      } catch (error) {
+        console.error('Failed to parse saved user:', error);
+        localStorage.removeItem('user');
+      }
+    }
+    return null;
+  });
 
   const addToCart = (product, quantity = 1) => {
     setCart(prevCart => {
@@ -57,67 +74,32 @@ export const AppProvider = ({ children }) => {
   const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
   const login = async (email, password) => {
-    // Mock login - in real app, this would call an API
-    await new Promise(resolve => setTimeout(resolve, 500));
+    const result = await authService.login(email, password);
     
-    // Demo users
-    if (email === 'admin@vlagify.nl' && password === 'admin') {
-      setUser({
-        id: '1',
-        email: 'admin@vlagify.nl',
-        firstName: 'Admin',
-        lastName: 'User',
-        name: 'Admin User',
-        role: 'admin',
-        address: 'Hoofdstraat 1',
-        postalCode: '1234 AB',
-        city: 'Amsterdam',
-        country: 'Nederland',
-        phone: '0612345678'
-      });
-      return true;
-    } else if (email === 'user@vlagify.nl' && password === 'user') {
-      setUser({
-        id: '2',
-        email: 'user@vlagify.nl',
-        firstName: 'Jan',
-        middleName: 'de',
-        lastName: 'Vries',
-        name: 'Jan de Vries',
-        role: 'user',
-        address: 'Kerkstraat 10',
-        postalCode: '5678 CD',
-        city: 'Rotterdam',
-        country: 'Nederland',
-        phone: '0687654321'
-      });
-      return true;
+    if (result.success && result.user) {
+      setUser(result.user);
+      // Save user to localStorage for persistence
+      localStorage.setItem('user', JSON.stringify(result.user));
     }
-    return false;
+    return result;
   };
 
   const register = async (userData) => {
-    // Mock registration
-    await new Promise(resolve => setTimeout(resolve, 500));
-    setUser({
-      id: Date.now().toString(),
-      email: userData.email,
-      firstName: userData.firstName,
-      middleName: userData.middleName,
-      lastName: userData.lastName,
-      name: `${userData.firstName} ${userData.middleName ? userData.middleName + ' ' : ''}${userData.lastName}`,
-      role: 'user',
-      phone: userData.phone,
-      address: userData.address,
-      postalCode: userData.postalCode,
-      city: userData.city,
-      country: userData.country
-    });
-    return true;
+    const result = await authService.register(userData);
+    
+    if (result.success && result.user) {
+      setUser(result.user);
+      // Save user to localStorage for persistence
+      localStorage.setItem('user', JSON.stringify(result.user));
+    }
+    return result;
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await authService.logout();
     setUser(null);
+    // Remove user from localStorage on logout
+    localStorage.removeItem('user');
   };
 
   const updateProfile = (data) => {
