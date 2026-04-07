@@ -5,6 +5,9 @@ import { useTranslation } from "react-i18next";
 import { Home } from "./pages/Home";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { Contact } from "./pages/Contact";
+import { FAQ } from "./pages/FAQ";
+
 import { LoginPage } from "./pages/LoginPage";
 import { useApp } from "./context/AppContext";
 //import { authService } from "./services/authService";
@@ -38,6 +41,10 @@ function App() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Faq" element={<FAQ />} />
+
+
         <Route path="/inloggen" element={<LoginPage />} />
         <Route path="/profiel" element={<ProfilePage />} />
         <Route path="/wachtwoord-wijzigen" element={<ChangePasswordPage />} />
