@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://localhost:7235'; // Adjust this to your API base URL
+/*
+  Localhost url: https://localhost:7235
+  Production url: http://vlagifyapi.runasp.net
+*/
+
+const API_BASE_URL = 'http://vlagifyapi.runasp.net';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
