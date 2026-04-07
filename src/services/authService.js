@@ -2,7 +2,7 @@ import axios from 'axios';
 
 /*
   Localhost url: https://localhost:7235
-  Production url: http://vlagifyapi.runasp.net
+  Production url: https://vlagifyapi.runasp.net
 */
 
 const API_BASE_URL = 'https://vlagifyapi.runasp.net';
