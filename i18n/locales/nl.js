@@ -110,7 +110,7 @@ export const nl = {
         contactText: 'Heeft u uw vraag niet gevonden?',
         contactDescription: 'Ons klantenservice team helpt u graag verder!',
         viewContact: 'Contact opnemen'
-}
+},
     login: {
         login: "Inloggen",
         register: "Registreren",
