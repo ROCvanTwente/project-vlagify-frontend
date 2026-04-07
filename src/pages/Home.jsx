@@ -5,11 +5,13 @@ import { products } from '../temp-data/products';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { useCurrency } from '../context/LocalizationContext';
 
+
 export const Home = () => {
   const { t } = useTranslation();
   const { convertPrice, formatPrice } = useCurrency();
   const customFlagProduct = products.find(p => p.id === 'custom-flag');
   const featuredProducts = products.slice(1, 5);
+
 
   const categoryNames = [
     { key: 'flags', path: 'vlaggen', image: products[1]?.image || products[0].image },
