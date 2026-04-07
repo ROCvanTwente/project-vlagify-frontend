@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://vlagifyapi.runasp.net';
+/*
+    Localhost: https://localhost:7235
+    Production: https://vlagifyapi.runasp.net
+*/
+
+const API_BASE_URL = 'https://localhost:7235';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -41,5 +46,13 @@ export async function changePassword(passwordData) {
         await apiClient.post('/api/auth/change-password', passwordData);
     } catch (error) {
         throw new Error(`Password change failed: ${error.response?.statusText || error.message}`);
+    }
+}
+
+export async function sendContactMessage(contactData) {
+    try {
+        await apiClient.post('/api/contact', contactData);
+    } catch (error) {
+        throw new Error(`Contact message failed: ${error.response?.statusText || error.message}`);
     }
 }

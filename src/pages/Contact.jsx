@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
 import { Editor } from '@tinymce/tinymce-react';
+import { sendContactMessage } from '../services/api';
 
 
 
@@ -19,19 +21,14 @@ export const Contact = () => {
     message: ''
   });
 
+  const [loading, setLoading] = useState(false);
+
 const handleSubmit = async (e) => {
   e.preventDefault();
+  setLoading(true);
 
   try {
-    const response = await fetch('https://localhost:7235/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (!response.ok) throw new Error();
+    await sendContactMessage(formData);
 
     toast.success(t('contact.successMessage'));
 
@@ -43,9 +40,11 @@ const handleSubmit = async (e) => {
       message: ''
     });
 
-navigate('/', { state: { success: true } });
+    navigate('/', { state: { success: true } });
   } catch (error) {
     toast.error('Er ging iets mis!');
+  } finally {
+    setLoading(false);
   }
 };
 
@@ -261,10 +260,11 @@ navigate('/', { state: { success: true } });
 
               <button
                 type="submit"
-                className="bg-blue-600 text-white p-4 w-full flex items-center justify-center rounded-lg hover:bg-blue-700 transition"
+                disabled={loading}
+                className="bg-blue-600 text-white p-4 w-full flex items-center justify-center rounded-lg hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('contact.sendButton')}
+                {loading ? t('contact.sending') : t('contact.sendButton')}
               </button>
 
             </form>
