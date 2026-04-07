@@ -4,7 +4,7 @@ import { ShoppingCart, User, Menu, X, Globe, DollarSign } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useLocalization } from '../context/LocalizationContext';
 import { useTranslation } from 'react-i18next';
-import logo from '../../public/logo.png';
+import logo from '/logo.png';
 
 export const Navbar = () => {
     const { cartItemCount, user } = useApp();
