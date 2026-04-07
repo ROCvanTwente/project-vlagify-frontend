@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
+import { Editor } from '@tinymce/tinymce-react';
+
+
 
 export const Contact = () => {
   const navigate = useNavigate();
@@ -16,8 +19,20 @@ export const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('https://localhost:7235/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) throw new Error();
+
     toast.success(t('contact.successMessage'));
 
     setFormData({
@@ -28,8 +43,11 @@ export const Contact = () => {
       message: ''
     });
 
-    navigate('/bedankt');
-  };
+navigate('/', { state: { success: true } });
+  } catch (error) {
+    toast.error('Er ging iets mis!');
+  }
+};
 
   const handleChange = (e) => {
     setFormData({
@@ -38,6 +56,12 @@ export const Contact = () => {
     });
   };
 
+  const handleEditorChange = (content) => {
+  setFormData(prev => ({
+    ...prev,
+    message: content
+  }));
+};
   return (
     <div className="min-h-screen bg-gray-50">
 
@@ -218,15 +242,21 @@ export const Contact = () => {
   <label className="block font-semibold mb-1">
     {t('contact.message')} *
   </label>
-  <textarea
-    name="message"
-    placeholder={t('contact.messagePlaceholder')}
-    value={formData.message}
-    onChange={handleChange}
-    required
-    rows="5"
-    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500"
-  />
+<Editor
+  apiKey="vui6d5zrrt9mmodtdkh5v9ro9euxbktk6x3sol4z0qbg8huw"
+  value={formData.message}
+  onEditorChange={handleEditorChange}
+  init={{
+    height: 250,
+    menubar: false,
+    plugins: [
+      'advlist', 'lists', 'link', 'autolink', 'wordcount'
+    ],
+    toolbar:
+      'undo redo | bold italic | bullist numlist | link',
+    placeholder: t('contact.messagePlaceholder'),
+  }}
+/>
 </div>
 
               <button
