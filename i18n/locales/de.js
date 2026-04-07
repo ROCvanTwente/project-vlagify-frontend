@@ -93,7 +93,8 @@ export const de = {
         wholesaleDescription: 'Interessiert an Großhandelspreisen oder maßgeschneiderten Flaggen? Kontaktieren Sie uns für ein unverbindliches Angebot.',
         customerServiceTitle: 'Kundenservice',
         customerServiceDescription: 'Unser Kundenservice-Team steht Ihnen zur Verfügung. Rufen Sie uns an oder senden Sie uns eine E-Mail für sofortige Hilfe bei Ihren Fragen.',
-        successMessage: 'Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.'
+        successMessage: 'Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.',
+        sending: 'Nachricht wird gesendet...'
     },
     faq: {
         title: 'Häufig gestellte Fragen',

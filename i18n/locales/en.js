@@ -93,7 +93,8 @@ export const en = {
         wholesaleDescription: 'Interested in wholesale prices or custom flags? Contact us for a non-binding quote.',
         customerServiceTitle: 'Customer Service',
         customerServiceDescription: 'Our customer service team is ready to help you. Call or email us for immediate assistance with your questions.',
-        successMessage: 'Thank you for your message! We will contact you as soon as possible.'
+        successMessage: 'Thank you for your message! We will contact you as soon as possible.',
+        sending: 'Sending message...'
     },
   faq: {
         title: 'Frequently Asked Questions',

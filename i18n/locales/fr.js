@@ -93,7 +93,8 @@ export const fr = {
         wholesaleDescription: 'Intéressé par les prix de gros ou les drapeaux personnalisés ? Contactez-nous pour un devis sans engagement.',
         customerServiceTitle: 'Service Client',
         customerServiceDescription: 'Notre équipe de service client est prête à vous aider. Appelez-nous ou envoyez-nous un e-mail pour une aide immédiate avec vos questions.',
-        successMessage: 'Merci pour votre message ! Nous vous contacterons dès que possible.'
+        successMessage: 'Merci pour votre message ! Nous vous contacterons dès que possible.',
+        sending: 'Envoi du message...'
     },
     faq: {
         title: 'Questions Fréquemment Posées',

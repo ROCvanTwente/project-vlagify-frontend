@@ -93,7 +93,8 @@ export const nl = {
         wholesaleDescription: 'Heeft u interesse in groothandel prijzen of maatwerk vlaggen? Neem contact met ons op voor een vrijblijvende offerte.',
         customerServiceTitle: 'Klantenservice',
         customerServiceDescription: 'Ons klantenservice team staat voor u klaar. Bel of mail ons voor directe hulp bij uw vragen.',
-        successMessage: 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.'
+        successMessage: 'Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.',
+        sending: 'Bericht verzenden...'
   },
   faq: {
         title: 'Veelgestelde Vragen',
