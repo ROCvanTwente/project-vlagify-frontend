@@ -56,7 +56,9 @@ export const de = {
         viewAll: "Alle Anzeigen →",
         specialRequest: "Haben Sie einen besonderen Wunsch?",
         specialRequestDesc: "Kontaktieren Sie uns für maßgefertigte Flaggen und Großhandelspreise",
-        contact: "Kontaktieren Sie Uns"
+        contact: "Kontaktieren Sie Uns",
+        flagCreatorTitle: "Erstellen Sie Ihre eigene Flagge",
+        flagCreatorSubtitle: "Entwerfen Sie Ihre eigene einzigartige Flagge mit unserem Konfigurator. Laden Sie Ihr Design hoch und wählen Sie aus verschiedenen Größen und Materialien."
     },
     contact: {
         pageTitle: 'Kontaktieren Sie Uns',

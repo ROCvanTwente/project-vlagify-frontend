@@ -56,7 +56,9 @@ export const en = {
         viewAll: "View All →",
         specialRequest: "Do you have a special request?",
         specialRequestDesc: "Contact us for custom flags and wholesale prices",
-        contact: "Contact Us"
+        contact: "Contact Us",
+        flagCreatorTitle: "Create Your Own Flag",
+        flagCreatorSubtitle: "Design your own unique flag with our configurator. Upload your design and choose from different sizes and materials."
     },
     contact: {
         pageTitle: 'Contact Us',
